@@ -1,0 +1,90 @@
+<form
+  id="FormContact"
+  class="w-full space-y-4 p-6 md:p-8 rounded-[32px] bg-[#F3EFFE]"
+>
+  <input
+    type="text"
+    name="company"
+    tabindex="-1"
+    autocomplete="off"
+    class="hidden"
+  />
+  <input
+    type="text"
+    name="name"
+    placeholder="Nama Lengkap"
+    required
+    class="w-full px-4 py-2 rounded-lg bg-[#fafafa]"
+  />
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Email"
+    required
+    class="w-full px-4 py-2 rounded-lg bg-[#fafafa]"
+  />
+  <input
+    type="tel"
+    name="whatsapp"
+    placeholder="Nomor Whatsapp"
+    required
+    class="w-full px-4 py-2 rounded-lg bg-[#fafafa]"
+  />
+
+  <textarea
+    name="pertanyaan"
+    id="pertanyaan"
+    class="w-full h-50 px-4 py-2 rounded-lg bg-[#fafafa]"
+    placeholder="Pertanyaan Kamu"></textarea>
+
+  <button
+    type="submit"
+    class="bg-[#146397] hover:bg-[#0f4f78]
+           text-white px-6 py-2 rounded cursor-pointer"
+  >
+    Kirim Pertanyaan
+  </button>
+
+  <p id="formStatus" aria-live="polite"></p>
+</form>
+
+<script>
+  const form = document.getElementById("FormContact");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    status.textContent = "Mengirim...";
+
+    const data = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      whatsapp: form.whatsapp.value.trim(),
+      pertanyaan: form.pertanyaan.value.trim(),
+      company: form.company.value.trim(),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok || !result.success) {
+        throw new Error("Gagal kirim");
+      }
+
+      status.textContent = "Pendaftaran berhasil dikirim 🙌";
+      form.reset();
+    } catch (err) {
+      status.textContent = "Terjadi kesalahan. Coba lagi.";
+    }
+  });
+</script>

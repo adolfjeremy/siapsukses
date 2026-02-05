@@ -1,0 +1,68 @@
+---
+import Chip from "../../components/Chip.astro";
+import s from "../../images/s.png";
+import i from "../../images/i.png";
+import a from "../../images/a.png";
+import p from "../../images/p.png";
+---
+
+<section class="flex flex-col px-[16px] lg:px-24 py-8 md:py-16">
+  <div class="flex gap-4 text-center flex-col items-center justify-center">
+    <Chip>Nilai Kami</Chip>
+    <h2>
+      <span class="text-[#146397] capitalize">Nilai</span><span
+        class="text-[#141219] capitalize"
+      >
+        yang kami tanamkan
+      </span><span class="text-[#146397] capitalize">tercermin</span><span
+        class="text-zinc-700 capitalize"
+      >
+        dalam<br /></span
+      ><span class="text-[#146397] capitalize"
+        >cara kami melatih dan bekerja</span
+      ><span class="text-zinc-700 capitalize">.</span>
+    </h2>
+  </div>
+  <div class="flex flex-col md:flex-row gap-4 mt-8">
+    <div
+      class="flex flex-col bg-[#F3EFFE] items-center justify-center p-6 rounded-[32px] gap-2 flex-1 text-center"
+    >
+      <img src={s.src} alt="Nilai Kami" class="w-14" />
+      <h3>Standar Profesional</h3>
+      <p>
+        Kami bekerja berdasarkan standar industri global, menjunjung tinggi
+        kualitas, etika kerja, dan tanggung jawab.
+      </p>
+    </div>
+    <div
+      class="flex flex-col bg-[#F3EFFE] items-center justify-center p-6 rounded-[32px] gap-2 flex-1 text-center"
+    >
+      <img src={i.src} alt="Nilai Kami" class="w-14" />
+      <h3>Integritas</h3>
+      <p>
+        Kami mengedepankan kejujuran, transparansi, dan komitmen dalam setiap
+        proses pelatihan dan penempatan.
+      </p>
+    </div>
+    <div
+      class="flex flex-col bg-[#FED45C] items-center justify-center p-6 rounded-[32px] gap-2 flex-1 text-center"
+    >
+      <img src={a.src} alt="Nilai Kami" class="w-14" />
+      <h3>Adaptif</h3>
+      <p>
+        Kami membekali peserta agar cepat beradaptasi dengan budaya, lingkungan
+        kerja, dan tuntutan profesional di Negara tujuan.
+      </p>
+    </div>
+    <div
+      class="flex flex-col bg-[#F3EFFE] items-center justify-center p-6 rounded-[32px] gap-2 flex-1 text-center"
+    >
+      <img src={p.src} alt="Nilai Kami" class="w-14" />
+      <h3>Produktif & Disiplin</h3>
+      <p>
+        Kami menanamkan kedisiplinan, etos kerja tinggi, dan sikap produktif
+        sebagai kunci kesuksesan kerja di Luar Negeri.
+      </p>
+    </div>
+  </div>
+</section>

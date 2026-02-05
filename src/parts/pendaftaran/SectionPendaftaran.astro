@@ -1,0 +1,33 @@
+---
+import Chip from "../../components/Chip.astro";
+import FormPendaftaran from "../../components/FormPendaftaran.astro";
+---
+
+<section
+  class="flex flex-col px-[16px] lg:px-24 py-[64px] items-center justify-center gap-10"
+>
+  <div class="flex flex-col items-center justify-center gap-4">
+    <Chip>Form Pendaftaran</Chip>
+    <h2 class="self-stretch text-center justify-center">
+      Mulai
+      <span class="text-[#146397] capitalize"> Proses Pendaftaran </span>Anda
+    </h2>
+  </div>
+  <div
+    class="flex flex-col md:flex-row items-center justify-between gap-6 w-full"
+  >
+    <div class="flex flex-col w-full">
+      <h3>Syarat Pendaftaran</h3>
+      <ol class="list-decimal list-inside flex flex-col gap-2 text-base">
+        <li>Berusia 18 - 35 tahun</li>
+        <li>Minimal Lulusan SMK/sederajat</li>
+        <li>Tinggi badan Pria minimal 165cm dan wanita 155cm</li>
+        <li>Berat badan ideal</li>
+        <li>Dokumen Akta lahir, KK, dan sebagainya lengkap</li>
+      </ol>
+    </div>
+    <div class="flex flex-col items-center justify-center w-full">
+      <FormPendaftaran />
+    </div>
+  </div>
+</section>

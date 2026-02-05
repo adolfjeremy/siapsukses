@@ -1,0 +1,40 @@
+---
+import Chip from "../../components/Chip.astro";
+import Button from "../../components/Button.astro";
+import ImageSlider from "./ImageSlider.astro";
+---
+
+<section
+  class="flex items-center justify-center px-[16px] lg:px-[100px] py-[32px]"
+>
+  <div
+    class="self-stretch self-stretch p-6 md:p-16 bg-[#FED45C] rounded-[32px] flex flex-col md:flex-row justify-center items-center gap-8"
+  >
+    <div
+      class="md:basis-1/2 self-stretch inline-flex flex-col justify-center items-center md:items-start gap-4 md:gap-6"
+    >
+      <Chip>Fasilitas</Chip>
+      <h2 class="justify-start text-center md:text-left">
+        <span class="text-[#146397] capitalize">Fasilitas</span><span
+          class="text-zinc-700 capitalize"
+        >
+          lengkap untuk
+        </span><span class="text-[#146397] capitalize">pembelajaran</span>
+      </h2>
+      <div
+        class="self-stretch justify-start text-slate-600 text-base font-normal text-center md:text-left capitalize"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </div>
+      <Button>Mendaftar Sekarang</Button>
+    </div>
+    <div
+      class="md:basis-1/2 flex-1 inline-flex flex-col justify-start items-start gap-2.5"
+    >
+      <ImageSlider />
+    </div>
+  </div>
+</section>

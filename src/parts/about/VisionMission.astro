@@ -1,0 +1,79 @@
+---
+import Chip from "../../components/Chip.astro";
+import classroom from "../../images/classroom.png";
+import rating from "../../images/rating.png";
+import rocket from "../../images/rocket-yellow.png";
+import quality from "../../images/quality.png";
+---
+
+<section class="flex flex-col px-[16px] lg:px-24 py-6">
+  <div
+    class="w-full px-4 pt-20 pb-4 md:p-6 lg:p-12 bg-[#FED45C] rounded-[32px] flex flex-col gap-8 vision-mission"
+  >
+    <div class="flex flex-col gap-2 items-center md:items-start justify-center">
+      <Chip>Tentang Kami</Chip>
+      <h2 class="justify-start text-center md:text-left">
+        <span class="text-[#141219]">Menyiapkan </span><span
+          class="text-[#146397]">tenaga kerja</span
+        ><span class="text-[#141219]">
+          yang siap kerja,<br />siap adaptasi, dan
+        </span><span class="text-[#146397]">siap sukses</span><span
+          class="text-[#141219]">.</span
+        >
+      </h2>
+    </div>
+    <div class="flex flex-col gap-2">
+      <h3 class="text-center md:text-start">Vision</h3>
+      <p class="lg:w-[70%]">
+        Menjadi lembaga pelatihan tenaga kerja yang beretika, terampil, dan
+        berdaya saing global, melalui pelatihan yang berkualitas, efisien, dan
+        berorientasi pada kesiapan kerja guna menciptakan tenaga profesional
+        Indonesia yang siap untuk sukses di luar negeri.
+      </p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <h3 class="text-center md:text-start">Misi</h3>
+      <div class="flex lg:flex-row flex-col gap-4">
+        <div
+          class="flex flex-1 flex-col p-4 justify-between items-end bg-[#FAFAFA] rounded-[26px]"
+        >
+          <p>
+            Menyelenggarakan program pelatihan singkat dan intensif yang
+            berfokus pada kompetensi bahasa, sikap kerja, dan keterampilan
+            teknis sesuai standar industri negara tujuan.
+          </p>
+          <img src={classroom.src} alt="Classroom" />
+        </div>
+        <div
+          class="flex flex-1 flex-col p-4 justify-between items-end bg-[#FAFAFA] rounded-[26px]"
+        >
+          <p>
+            Mempersiapkan peserta secara menyeluruh yang didukung oleh tenaga
+            pelatih yang handal dan berpengalaman serta memahami budaya dan etos
+            kerja agar peserta siap bekerja di sektor yang dipilih.
+          </p>
+          <img src={rating.src} alt="Rating" />
+        </div>
+        <div
+          class="flex flex-1 flex-col p-4 justify-between text-[#fafafa] items-end bg-[#146397] rounded-[26px]"
+        >
+          <p>
+            Memberikan lingkungan pelatihan yang nyaman, disiplin, dan mendukung
+            perkembangan karakter peserta.
+          </p>
+          <img src={rocket.src} alt="Rocket" />
+        </div>
+        <div
+          class="flex flex-1 flex-col p-4 justify-between items-end bg-[#FAFAFA] rounded-[26px]"
+        >
+          <p>
+            Menjadi mitra yang jujur dan bertanggung jawab bagi perusahaan di
+            luar negeri dalam menyediakan tenaga kerja Indonesia yang siap
+            kerja, siap beradaptasi, dan siap sukses.
+          </p>
+          <img src={quality.src} alt="Quality" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

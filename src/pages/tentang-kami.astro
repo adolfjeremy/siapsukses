@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import AboutUs from "../parts/about/AboutUs.astro";
+import VisionMission from "../parts/about/VisionMission.astro";
+import Value from "../parts/about/Value.astro";
+import Cta from "../components/Cta.astro";
+---
+
+<BaseLayout>
+  <Hero>
+    <h1 slot="h1" class="self-stretch text-center justify-start">
+      <span class="text-amber-300 capitalize">Menyiapkan</span><span
+        class="capitalize"
+      >
+        Talenta</span
+      ><span class="text-amber-300 capitalize"> Indonesia</span><span
+        class="capitalize"
+      >
+        untuk
+      </span><span class="text-amber-300 capitalize">Bekerja</span><span
+        class="text-white capitalize"
+      >
+        di Panggung Global.</span
+      >
+    </h1>
+    <p
+      slot="p"
+      class="text-center justify-start text-white text-base font-normal font-['Satoshi_Variable'] capitalize"
+    >
+      Sebagai lembaga pelatihan Kerja, Siap Sukses membekali peserta dengan
+      keterampilan, sikap kerja, dan kesiapan adaptasi untuk dunia kerja global.
+    </p>
+  </Hero>
+  <AboutUs />
+  <VisionMission />
+  <Value />
+  <Cta />
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionPendaftaran from "../parts/pendaftaran/SectionPendaftaran.astro";
+---
+
+<BaseLayout>
+  <Hero>
+    <h1 slot="h1" class="self-stretch text-center justify-start">
+      Langkah Awal
+      <span class="text-amber-300 capitalize">Dimulai dari Sini</span>
+    </h1>
+    <p
+      slot="p"
+      class="text-center justify-start text-white text-base font-normal font-['Satoshi_Variable'] capitalize"
+    >
+      Sebagai lembaga pelatihan Kerja, Siap Sukses membekali peserta dengan
+      keterampilan, sikap kerja, dan kesiapan adaptasi untuk dunia kerja global.
+    </p>
+  </Hero>
+  <SectionPendaftaran />
+</BaseLayout>

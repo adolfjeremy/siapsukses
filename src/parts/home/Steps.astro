@@ -1,0 +1,61 @@
+---
+import Chip from "../../components/Chip.astro";
+import StepWithCurve from "../../components/StepWithCurve.astro";
+import StepLast from "../../components/StepLast.astro";
+import test from "../../images/test.png";
+import interview from "../../images/interview.png";
+import enrolled from "../../images/enrolled.png";
+import certificate from "../../images/certificate.png";
+import rocket from "../../images/rocket.png";
+---
+
+<section
+  class="flex flex-col items-center justify-center py-[60px] px-[16px] lg:px-[100px]"
+>
+  <div class="self-stretch flex flex-col justify-center items-center gap-8">
+    <Chip>Alur Program </Chip>
+    <h2 class="text-center justify-start">
+      Tahapan Program<span class="text-[#146397] capitalize">
+        Tokutei Ginou</span
+      >
+    </h2>
+    <p></p>
+  </div>
+  <div class="mx-auto px-6">
+    <div
+      class="flex flex-col md:flex-row items-start justify-between gap-[32px]"
+    >
+      <StepWithCurve
+        title="Pendaftaran & MCU"
+        description="Peserta melakukan pendaftaran dan menjalani medical check up awal untuk memastikan kondisi kesehatan sebelum mengikuti program."
+      >
+        <img src={enrolled.src} alt="Enrolled" />
+      </StepWithCurve>
+      <StepWithCurve
+        title="Pelatihan & Sertifikasi"
+        description="Peserta mengikuti pelatihan intensif selama ±3 bulan, dilanjutkan dengan ujian sertifikasi bahasa Jepang (JLPT atau JFT)."
+      >
+        <img src={certificate.src} alt="Certificate" />
+      </StepWithCurve>
+      <StepWithCurve
+        title="Tes Teknis"
+        description="Peserta mengikuti tes keterampilan teknis sesuai bidang pekerjaan sebagai syarat kelulusan seleksi."
+      >
+        <img src={test.src} alt="Test" />
+      </StepWithCurve>
+      <StepWithCurve
+        title="Interview & Dokumen"
+        description="Peserta menjalani interview dengan perusahaan Jepang serta pengurusan dokumen, termasuk paspor, visa, dan medical check up lanjutan."
+      >
+        <img src={interview.src} alt="interview" />
+      </StepWithCurve>
+
+      <StepLast
+        title="Keberangkatan"
+        description="Setelah seluruh proses selesai, peserta diberangkatkan ke Jepang untuk mulai bekerja sebagai tenaga Tokutei Ginou."
+      >
+        <img src={rocket.src} alt="Rocket Icon" />
+      </StepLast>
+    </div>
+  </div>
+</section>

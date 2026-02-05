@@ -1,0 +1,171 @@
+---
+import logo from "../images/logo_siap_sukses.png";
+import logoMobile from "../images/logo_mobile.png";
+import Button from "./Button.astro";
+
+const pathname = Astro.url.pathname;
+
+const navItems = [
+  { label: "Beranda", href: "/" },
+  { label: "Tentang Kami", href: "/tentang-kami" },
+  { label: "Tokutei Ginou", href: "/tokutei-ginou" },
+  { label: "Pendaftaran", href: "/pendaftaran" },
+  { label: "Hubungi Kami", href: "/hubungi-kami" },
+];
+
+const isActive = (href) =>
+  href === "/" ? pathname === "/" : pathname.startsWith(href);
+---
+
+<header class="w-full lg:px-[100px] px-[16px] text-white">
+  <div class="mx-auto py-4 flex items-center justify-between">
+    <!-- LOGO -->
+    <div class="flex items-center gap-2">
+      <img
+        src={logo.src}
+        alt="Siap Sukses"
+        class="w-36 h-auto hidden md:block"
+      />
+      <img
+        src={logoMobile.src}
+        alt="Siap Sukses Mobile"
+        class="w-16 h-auto md:hidden"
+      />
+    </div>
+
+    <!-- DESKTOP NAV -->
+    <nav class="hidden md:flex items-center gap-8 text-[#141219] text-base">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`nav-link hover:text-cyan-700 ${isActive(item.href) ? "active" : ""}`}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <!-- CTA -->
+    <div class="hidden md:block">
+      <Button>Mendaftar Sekarang</Button>
+    </div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button
+      id="menuBtn"
+      class="md:hidden relative z-55 w-8 h-8 flex flex-col justify-center gap-1.5"
+      aria-label="Open Menu"
+    >
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </button>
+  </div>
+
+  <!-- MOBILE DRAWER -->
+  <div id="drawer" class="fixed inset-0 z-50 hidden">
+    <div id="backdrop" class="absolute inset-0 bg-black/50"></div>
+
+    <div
+      id="drawerPanel"
+      class="absolute left-0 top-0 h-full w-72 bg-[#F3EFFE]
+         p-6 flex flex-col items-center justify-center gap-6
+         transform -translate-x-full
+         transition-[transform,opacity] duration-300 ease-out
+         opacity-0"
+    >
+      <!-- NAV -->
+      <nav
+        class="flex flex-col gap-4 text-[#141219] text-lg text-center mobile-nav"
+      >
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class={`nav-link hover:text-[#146397] ${isActive(item.href) ? "active" : ""}`}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <!-- CTA -->
+      <Button>Mendaftar Sekarang</Button>
+    </div>
+  </div>
+</header>
+
+<style>
+  #menuBtn .line {
+    height: 4px;
+    width: 100%;
+    background: #146397;
+    border-radius: 3px;
+    transition:
+      transform 0.3s ease,
+      opacity 0.2s ease;
+  }
+
+  #menuBtn.is-open .line:nth-child(1) {
+    transform: translateY(13px) rotate(45deg);
+  }
+
+  #menuBtn.is-open .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menuBtn.is-open .line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  .mobile-nav .nav-link {
+    font-size: 1.6825rem;
+  }
+  .nav-link {
+    transition: color 0.2s ease;
+  }
+
+  .nav-link.active {
+    color: #146397;
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const drawer = document.getElementById("drawer");
+  const drawerPanel = document.getElementById("drawerPanel");
+  const backdrop = document.getElementById("backdrop");
+
+  function openDrawer() {
+    drawer.classList.remove("hidden");
+
+    requestAnimationFrame(() => {
+      drawerPanel.classList.remove("-translate-x-full");
+      drawerPanel.classList.remove("opacity-0");
+      menuBtn.classList.add("is-open");
+    });
+  }
+
+  function closeDrawer() {
+    drawerPanel.classList.add("-translate-x-full");
+    drawerPanel.classList.add("opacity-0");
+    menuBtn.classList.remove("is-open");
+
+    setTimeout(() => {
+      drawer.classList.add("hidden");
+    }, 300);
+  }
+
+  menuBtn.addEventListener("click", () => {
+    if (drawer.classList.contains("hidden")) {
+      openDrawer();
+    } else {
+      closeDrawer();
+    }
+  });
+
+  backdrop.addEventListener("click", closeDrawer);
+</script>

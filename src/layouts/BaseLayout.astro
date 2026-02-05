@@ -1,0 +1,30 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+const {
+  title = "SiapSukses",
+  description = "Solusi marketing untuk bantu bisnis bertumbuh lebih cepat",
+} = Astro.props;
+---
+
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- SEO dasar -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+
+  <body>
+    <Header />
+    <slot />
+  </body>
+  <Footer />
+</html>

@@ -1,0 +1,82 @@
+<form
+  class="w-full space-y-4 p-6 md:px-8 md:py-12 rounded-[32px] bg-[#F3EFFE]"
+  id="FormPendaftaran"
+>
+  <h3>Lengkapi form di bawah ini!</h3>
+  <input
+    type="text"
+    name="company"
+    tabindex="-1"
+    autocomplete="off"
+    class="hidden"
+  />
+  <input
+    type="text"
+    name="name"
+    placeholder="Nama Lengkap"
+    required
+    class="w-full border px-4 py-2 rounded"
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Email"
+    required
+    class="w-full border px-4 py-2 rounded"
+  />
+  <input
+    type="tel"
+    name="whatsapp"
+    placeholder="Nomor Whatsapp"
+    required
+    class="w-full border px-4 py-2 rounded"
+  />
+
+  <button
+    type="submit"
+    class="bg-[#146397] hover:bg-[#0f4f78]
+           text-white px-6 py-2 rounded cursor-pointer"
+  >
+    Mendaftar
+  </button>
+  <p id="formStatus" aria-live="polite"></p>
+</form>
+
+<script>
+  const form = document.getElementById("FormPendaftaran");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    status.textContent = "Mengirim...";
+
+    const data = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      whatsapp: form.whatsapp.value.trim(),
+      company: form.company.value.trim(),
+    };
+
+    try {
+      const res = await fetch("/api/pendaftaran", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok || !result.success) {
+        throw new Error("Gagal kirim");
+      }
+
+      status.textContent = "Pendaftaran berhasil dikirim 🙌";
+      form.reset();
+    } catch (err) {
+      status.textContent = "Terjadi kesalahan. Coba lagi.";
+    }
+  });
+</script>

@@ -1,0 +1,47 @@
+---
+import arrowLeft from "../images/arrow-left.png";
+import arrowRight from "../images/arrow-right.png";
+import sakura from "../images/sakura.png";
+import japan from "../images/japan.png";
+---
+
+<section
+  class="relative px-[16px] md:px-24 h-[60svh] bg-[#146397] md:h-[50svh] lg:h-[60svh] xl:h-[80svh] overflow-hidden"
+>
+  <!-- BACKGROUND LAYER 1 -->
+  <img
+    src={arrowLeft.src}
+    alt="Arrow Left"
+    class="absolute w-30 lg:w-50 left-0 top-0 z-1"
+  />
+
+  <!-- BACKGROUND LAYER 2 -->
+  <img
+    src={arrowRight.src}
+    alt="Arrow Right"
+    class="absolute w-30 lg:w-50 right-0 bottom-0 z-1"
+  />
+
+  <!-- BACKGROUND LAYER 3 -->
+  <img
+    src={sakura.src}
+    alt="Sakura"
+    class="absolute w-30 lg:w-50 left-[-30px] bottom-[-20px] z-1"
+  />
+
+  <img
+    src={japan.src}
+    alt="Japan flag"
+    class="absolute w-30 right-0 top-0 z-1"
+  />
+
+  <!-- CONTENT -->
+  <div class="relative z-30 w-full h-full px-6 flex items-center">
+    <div
+      class="flex flex-col gap-2.5 text-[#F3EFFE] items-center justify-center w-full"
+    >
+      <slot name="h1" />
+      <slot name="p" />
+    </div>
+  </div>
+</section>

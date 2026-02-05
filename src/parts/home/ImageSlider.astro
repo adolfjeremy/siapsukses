@@ -1,0 +1,145 @@
+<div class="space-y-4 relative">
+  <!-- MAIN IMAGE -->
+  <div class="relative overflow-hidden rounded-xl">
+    <img
+      id="mainImage"
+      src="https://picsum.photos/id/1011/800/400"
+      class="w-full h-[400px] object-cover transition-opacity duration-300 opacity-100"
+    />
+
+    <!-- PREV -->
+    <button
+      id="prevBtn"
+      type="button"
+      class="absolute left-4 top-1/2 -translate-y-1/2
+             z-20 w-10 h-10 rounded-full
+             bg-black/70 text-white flex items-center justify-center cursor-pointer"
+    >
+      ‹
+    </button>
+
+    <!-- NEXT -->
+    <button
+      id="nextBtn"
+      type="button"
+      class="absolute right-4 top-1/2 -translate-y-1/2
+             z-20 w-10 h-10 rounded-full
+             bg-black/70 text-white flex items-center justify-center cursor-pointer"
+    >
+      ›
+    </button>
+  </div>
+
+  <!-- THUMBNAILS -->
+  <div class="thumbs flex w-full h-24 overflow-hidden rounded-md">
+    <div
+      class="thumb flex-1 overflow-hidden cursor-pointer transition-opacity duration-300"
+      data-index="0"
+    >
+      <img
+        src="https://picsum.photos/id/1011/200/120"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <div
+      class="thumb flex-1 overflow-hidden cursor-pointer transition-opacity duration-300"
+      data-index="1"
+    >
+      <img
+        src="https://picsum.photos/id/1015/200/120"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <div
+      class="thumb flex-1 overflow-hidden cursor-pointer transition-opacity duration-300"
+      data-index="2"
+    >
+      <img
+        src="https://picsum.photos/id/1016/200/120"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <div
+      class="thumb flex-1 overflow-hidden cursor-pointer transition-opacity duration-300"
+      data-index="3"
+    >
+      <img
+        src="https://picsum.photos/id/1018/200/120"
+        class="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</div>
+
+<script>
+  // DATA
+  const images = [
+    "https://picsum.photos/id/1011/800/400",
+    "https://picsum.photos/id/1015/800/400",
+    "https://picsum.photos/id/1016/800/400",
+    "https://picsum.photos/id/1018/800/400",
+  ];
+
+  preloadImages(images);
+
+  let currentIndex = 0;
+
+  // ELEMENTS
+  const mainImage = document.getElementById("mainImage");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const thumbs = document.querySelectorAll(".thumb");
+
+  // UPDATE UI
+  function updateSlider(index) {
+    currentIndex = index;
+
+    // 🔹 UPDATE THUMBNAIL STATE (LANGSUNG, JANGAN DITUNDA)
+    thumbs.forEach((thumb, i) => {
+      if (!(thumb instanceof HTMLElement)) return;
+      thumb.style.opacity = i === currentIndex ? "1" : "0.4";
+    });
+
+    // 🔹 FADE IMAGE
+    mainImage.classList.remove("opacity-100");
+    mainImage.classList.add("opacity-0");
+
+    setTimeout(() => {
+      mainImage.src = images[currentIndex];
+      mainImage.classList.remove("opacity-0");
+      mainImage.classList.add("opacity-100");
+    }, 150);
+  }
+
+  function preloadImages(srcList) {
+    srcList.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }
+
+  // BUTTON EVENTS
+  prevBtn.addEventListener("click", () => {
+    const nextIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+    updateSlider(nextIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    const nextIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+    updateSlider(nextIndex);
+  });
+
+  // THUMB EVENTS
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      const index = Number(thumb.dataset.index);
+      if (Number.isNaN(index)) return;
+
+      updateSlider(index);
+    });
+  });
+  updateSlider(0);
+</script>

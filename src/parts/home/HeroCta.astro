@@ -1,0 +1,42 @@
+---
+import Chip from "../../components/Chip.astro";
+import Button from "../../components/Button.astro";
+import HeroImage from "../../images/hero_image.png";
+---
+
+<section>
+  <div
+    class="w-full md:px-[100px] px-4 py-8 md:py-20 flex flex-col lg:flex-row items-center md:justify-between gap-[1rem]"
+  >
+    <div
+      class="flex flex-col justify-center align-center md:justify-start md:items-start gap-6 max-w-lg"
+    >
+      <div class="flex items-center justify-center">
+        <Chip>Lembaga Pelatihan Kerja</Chip>
+      </div>
+      <h1
+        class="leading-14 md:leading-16 justify-start text-center md:text-left"
+      >
+        <span class="text-[#146397] bg-[#FED45C] px-2 rounded-xl capitalize"
+          >Siap Bekerja</span
+        ><span class="text-[#141219] capitalize"> di Jepang bersama </span><span
+          class="text-[#146397] underline decoration-[#FED45C] capitalize"
+          >Siap&nbsp;Sukses</span
+        ><span class="text-[#141219] capitalize">?</span>
+      </h1>
+      <p
+        class="justify-start text-slate-600 text-base text-center md:text-justify font-normal"
+      >
+        LPK Siap Sukses adalah lembaga pelatihan vokasi atau specified skilled
+        worker (SSW) dimana para peserta akan diajar bahasa Jepang dan teknis
+        agar dapat bekerja di Jepang secara cepat dan efisien
+      </p>
+      <div class="flex align-center justify-center">
+        <Button>Mendaftar Sekarang</Button>
+      </div>
+    </div>
+    <div>
+      <img src={HeroImage.src} alt="Hero" class="object-cover" />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+---
+import Button from "./Button.astro";
+import arrowLeft from "../images/arrow-left.png";
+import japan from "../images/japan.png";
+import ctaImage from "../images/cta_image.png";
+---
+
+<section
+  class="relative h-[90svh] bg-[#146397] md:h-[50svh] lg:h-[50svh] xl:h-[80svh] overflow-hidden"
+>
+  <!-- BACKGROUND LAYER 1 -->
+  <img
+    src={arrowLeft.src}
+    alt="Arrow Left"
+    class="absolute w-30 lg:w-50 left-0 top-0 z-1"
+  />
+  <img
+    src={japan.src}
+    alt="Japan flag"
+    class="absolute w-30 right-0 top-0 z-1"
+  />
+
+  <!-- CONTENT -->
+  <div
+    class="relative z-30 pt-[110px] max-w-7xl mx-auto h-full px-6 flex flex-col md:flex-row items-end justify-between"
+  >
+    <div
+      class="h-full flex-1 flex flex-col items-start justify-center gap-6 text-[#F3EFFE]"
+    >
+      <h2>
+        Mulai langkah profesionalmu <br class="hidden md:block" />bersama
+
+        <span class="text-[#141219] bg-[#FED45C] px-2 rounded-xl capitalize"
+          >Siap&nbsp;Sukses</span
+        >
+      </h2>
+      <Button color="#FED45C" textColor="#141219">Daftar Sekarang</Button>
+    </div>
+    <div class="flex-1 flex items-center justify-center">
+      <img src={ctaImage.src} alt="woman pointing to the left" class="w-auto" />
+    </div>
+  </div>
+</section>

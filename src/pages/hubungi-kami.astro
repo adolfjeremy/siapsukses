@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import ContactSection from "../parts/contact/ContactSection.astro";
+import FAQ from "../parts/contact/FAQ.astro";
+---
+
+<BaseLayout>
+  <Hero>
+    <h1 slot="h1" class="self-stretch text-center justify-start">
+      Butuh Informasi Lebih Lanjut?
+    </h1>
+    <p slot="p" class="text-center justify-start text-[#fafafa] capitalize">
+      Hubungi tim Siap Sukses melalui formulir atau kontak yang tersedia.
+    </p>
+  </Hero>
+  <ContactSection />
+  <section class="px-[16px] md:px-24 py-4 w-full location h-[80svh]">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.5208154739275!2d106.76418937515105!3d-6.326486061904965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef7416064fe5%3A0x720b0cd763b0a683!2sLPK%20Siap%20Sukses!5e0!3m2!1sid!2sid!4v1770191572964!5m2!1sid!2sid"
+      width="600"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+  <FAQ />
+</BaseLayout>
