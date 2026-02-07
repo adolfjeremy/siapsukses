@@ -16,15 +16,15 @@ const { title, description } = Astro.props;
     class="absolute
         hidden md:block
          top-8
-         left-[calc(50%+16px)]
+         left-[calc(50%)]
          w-[100%]
          h-12"
-    viewBox="0 0 200 60"
+    viewBox="0 0 230 60"
     fill="none"
     aria-hidden="true"
   >
     <path
-      d="M0 24 A100 24 0 0 0 200 24"
+      d="M0 24 A105 24 0 0 0 240 24"
       stroke="#2563eb"
       stroke-width="2"
       stroke-dasharray="6 6"
@@ -33,7 +33,7 @@ const { title, description } = Astro.props;
 
   <!-- TEXT -->
   <h3 class="h4 mt-4 font-semibold text-lg text-slate-800">{title}</h3>
-  <p class="mt-1 text-base text-slate-500 max-w-[200px]">
+  <p class="mt-1 text-md text-[#516276] max-w-[200px]">
     {description}
   </p>
 </div>
