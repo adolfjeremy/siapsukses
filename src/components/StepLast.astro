@@ -3,7 +3,7 @@ const { title, description } = Astro.props;
 ---
 
 <div
-  class="flex-1 flex flex-col items-center text-center position-relative z-2"
+  class="flex-1 w-full flex flex-col items-center text-center position-relative z-2"
 >
   <div
     class="w-16 h-16 rounded-full
@@ -13,7 +13,7 @@ const { title, description } = Astro.props;
   </div>
 
   <h3 class="h4 mt-4 font-semibold text-lg text-slate-800">{title}</h3>
-  <p class="mt-1 text-md text-[#516276] max-w-[200px]">
+  <p class="mt-1 text-md text-[#516276]">
     {description}
   </p>
 </div>
