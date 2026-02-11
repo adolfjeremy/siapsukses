@@ -1,10 +1,10 @@
 ---
 import Chip from "../../components/Chip.astro";
 import Button from "../../components/Button.astro";
-import HeroImage from "../../images/hero_image.png";
+import HeroCtaImage from "../../images/hero_image_cta.png";
 ---
 
-<section>
+<section class="hero_cta">
   <div
     class="w-full md:px-[100px] px-4 py-8 md:py-20 flex flex-col lg:flex-row items-center md:justify-between gap-[1rem]"
   >
@@ -36,7 +36,7 @@ import HeroImage from "../../images/hero_image.png";
       </div>
     </div>
     <div>
-      <img src={HeroImage.src} alt="Hero" class="object-cover" />
+      <img src={HeroCtaImage.src} alt="Hero" class="object-cover" />
     </div>
   </div>
 </section>
