@@ -1,0 +1,41 @@
+---
+import Chip from "../../components/Chip.astro";
+import door from "../../images/door.png";
+import money from "../../images/money.png";
+import leaf from "../../images/leaf.png";
+import target from "../../images/target.png";
+---
+
+<section class="flex flex-col px-[16px] lg:px-24 py-8 md:py-10">
+  <div class="flex gap-4 text-center flex-col items-center justify-center">
+    <h2>
+      Kenapa <span class="text-[#146397]">Jepang</span>?
+    </h2>
+  </div>
+  <div class="flex flex-col md:flex-row gap-4 mt-8">
+    <div
+      class="flex flex-col bg-[#F3EFFE] items-center justify-center p-6 rounded-[16px] gap-2 flex-1 text-center"
+    >
+      <img src={door.src} alt="pintu" class="w-14" />
+      <p>Kesempatan kerja terbuka lebar</p>
+    </div>
+    <div
+      class="flex flex-col bg-[#F3EFFE] items-center justify-center p-6 rounded-[16px] gap-2 flex-1 text-center"
+    >
+      <img src={money.src} alt="uang" class="w-14" />
+      <p>Tingkat pendapatan lebih tinggi</p>
+    </div>
+    <div
+      class="flex flex-col bg-[#146397] items-center justify-center p-6 rounded-[16px] gap-2 flex-1 text-center"
+    >
+      <img src={leaf.src} alt="daun" class="w-14" />
+      <p class="text-[#fafafa]">Lingkungan lebih baik, bersih dan aman</p>
+    </div>
+    <div
+      class="flex flex-col bg-[#F3EFFE] items-center justify-center p-6 rounded-[16px] gap-2 flex-1 text-center"
+    >
+      <img src={target.src} alt="Nilai Kami" class="w-14" />
+      <p>Membuka peluang untuk pindah ke Jepang</p>
+    </div>
+  </div>
+</section>

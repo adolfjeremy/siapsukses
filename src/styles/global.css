@@ -17,12 +17,12 @@ h1 {
   font-size: clamp(36px, 3.5vw + 8px, 64px);
   font-weight: bolder;
 }
-h2 {
+h2, .h2 {
   font-size: clamp(28px, 3vw + 6px, 40px);
   font-weight: bold;
 }
 
-h3 {
+h3, .h3 {
   font-size: clamp(21px, 1.6vw, 26px);
   font-weight: 600;
 }
@@ -31,11 +31,12 @@ h4, .h4 {
   font-size: clamp(18px, 1.2vw, 22px) !important;
 }
 
-.hero_cta {
-  background-image: url("../images/hero_bg.png");
+.tokutei_ginou {
+  background-image: url("../images/tokutei_ginou.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: calc(100svh - 90px);
 }
 
 .program, .vision-mission {

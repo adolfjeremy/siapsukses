@@ -1,0 +1,34 @@
+---
+import IndonesianWorker from "../../images/indonesian_worker.png";
+import Chip from "../../components/Chip.astro";
+import Button from "../../components/Button.astro";
+---
+
+<section
+  class="px-[16px] md:px-24 py-6 md:py-8 flex flex-col md:flex-row gap-12"
+>
+  <div class="flex-1 py-8">
+    <img
+      src={IndonesianWorker.src}
+      alt="indonesian worker"
+      class="rounded-[16px]"
+    />
+  </div>
+  <div
+    class="flex-1 self-stretch inline-flex flex-col justify-center items-center md:items-start gap-4 md:gap-3"
+  >
+    <Chip>Program</Chip>
+    <h2 class="justify-start text-center md:text-left capitalize">
+      apa itu<span class="text-[#146397] capitalize"> Tokutei Ginou</span>?
+    </h2>
+    <p
+      class="justify-start text-slate-600 text-base font-normal text-center md:text-left mb-2"
+    >
+      Tokutei Ginou adalah program pemerintah Jepang untuk dapat mengisi
+      kekosongan tenaga kerja di Jepang, dimana nantinya para peserta akan
+      bekerja di perusahaan Jepang dan dilindungi hak-haknya oleh pemerintah di
+      Jepang pada saat bekerja.
+    </p>
+    <Button>Gabung Sekarang</Button>
+  </div>
+</section>
