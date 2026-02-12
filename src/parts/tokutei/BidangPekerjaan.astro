@@ -1,0 +1,188 @@
+---
+import Chip from "../../components/Chip.astro";
+import pekerjaan1 from "../../images/pekerjaan-1.jpeg";
+import pekerjaan2 from "../../images/pekerjaan-2.jpeg";
+import pekerjaan3 from "../../images/pekerjaan-3.jpeg";
+import pekerjaan4 from "../../images/pekerjaan-4.jpeg";
+import pekerjaan5 from "../../images/pekerjaan-5.jpeg";
+import pekerjaan6 from "../../images/pekerjaan-6.jpeg";
+import pekerjaan7 from "../../images/pekerjaan-7.webp";
+import pekerjaan8 from "../../images/pekerjaan-8.avif";
+import pekerjaan9 from "../../images/pekerjaan-9.jpg";
+import pekerjaan10 from "../../images/pekerjaan-10.jpeg";
+---
+
+<section
+  class="flex flex-col md:flex-row items-center justify-between gap-8 px-[16px] lg:px-24 py-6 md:pt-6 md:pb-16"
+>
+  <div
+    class="flex w-full lg:w-1/2 flex-col items-center md:items-start justify-center gap-4"
+  >
+    <Chip>Kesempatan Karier</Chip>
+    <h2 class="text-center md:text-start">
+      <span class="text-[#146397]">Pilihan</span> Bidang Kerja yang Siap Anda Masuki
+    </h2>
+    <ol class="list-decimal list-inside ps-2 mt-3 w-full">
+      <li>Caregiver</li>
+      <li>Waiter/Pramusaji</li>
+      <li>Housekeeping hotel</li>
+      <li>Resepsionis</li>
+      <li>Perkayuan</li>
+      <li>Pabrik, dan sebagainya</li>
+    </ol>
+  </div>
+  <div class="w-full lg:w-1/2">
+    <div class="w-full space-y-10">
+      <!-- MARQUEE 1 (LEFT) -->
+      <div class="marquee-wrapper">
+        <div class="marquee-track">
+          <img src={pekerjaan1.src} class="marquee-img" alt="woman caretaker" />
+          <img src={pekerjaan2.src} class="marquee-img" alt="male caretaker" />
+          <img src={pekerjaan3.src} class="marquee-img" alt="waitres" />
+          <img
+            src={pekerjaan4.src}
+            class="marquee-img"
+            alt="male housekeeping"
+          />
+          <img
+            src={pekerjaan5.src}
+            class="marquee-img"
+            alt="woman housekeeping"
+          />
+
+          <img src={pekerjaan1.src} class="marquee-img" alt="woman caretaker" />
+          <img src={pekerjaan2.src} class="marquee-img" alt="male caretaker" />
+          <img src={pekerjaan3.src} class="marquee-img" alt="waitres" />
+          <img
+            src={pekerjaan4.src}
+            class="marquee-img"
+            alt="male housekeeping"
+          />
+          <img
+            src={pekerjaan5.src}
+            class="marquee-img"
+            alt="woman housekeeping"
+          />
+        </div>
+      </div>
+
+      <!-- MARQUEE 2 (RIGHT) -->
+      <div class="marquee-wrapper">
+        <div class="marquee-track reverse">
+          <img src={pekerjaan6.src} class="marquee-img" alt="resepsionis" />
+          <img
+            src={pekerjaan7.src}
+            class="marquee-img"
+            alt="workshop pengrajin kayu"
+          />
+          <img src={pekerjaan8.src} class="marquee-img" alt="pengrajin kayu" />
+          <img
+            src={pekerjaan9.src}
+            class="marquee-img"
+            alt="wanita pekerja pabrik"
+          />
+          <img src={pekerjaan10.src} class="marquee-img" alt="pekerja pabrik" />
+          <img src={pekerjaan6.src} class="marquee-img" alt="resepsionis" />
+          <img
+            src={pekerjaan7.src}
+            class="marquee-img"
+            alt="workshop pengrajin kayu"
+          />
+          <img src={pekerjaan8.src} class="marquee-img" alt="pengrajin kayu" />
+          <img
+            src={pekerjaan9.src}
+            class="marquee-img"
+            alt="wanita pekerja pabrik"
+          />
+          <img src={pekerjaan10.src} class="marquee-img" alt="pekerja pabrik" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Gradient Fade */
+  .marquee-wrapper::before,
+  .marquee-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px; /* lebih panjang = lebih smooth */
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.9) 30%,
+      rgba(255, 255, 255, 0.6) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.9) 30%,
+      rgba(255, 255, 255, 0.6) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  /* Track */
+  .marquee-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    animation: scroll-left 25s linear infinite;
+  }
+
+  .marquee-track.reverse {
+    animation: scroll-right 25s linear infinite;
+  }
+
+  .marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* Images */
+  .marquee-img {
+    height: 160px;
+    width: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Animations */
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scroll-right {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+</style>
