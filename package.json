@@ -12,7 +12,6 @@
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.17.1",
     "embla-carousel": "^8.6.0",
-    "react-fast-marquee": "^1.6.5",
     "tailwindcss": "^4.1.18"
   }
 }
