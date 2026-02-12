@@ -42,11 +42,11 @@ h4, .h4 {
 }
 
 .tokutei_ginou {
-  background-image: url("../images/tokutei_ginou.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: calc(100svh - 90px);
+  position: relative;
+  height: 75svh;
+  @media (min-width: 1025px) {
+   height: calc(100svh - 90px);
+  }
 }
 
 .program, .vision-mission {
