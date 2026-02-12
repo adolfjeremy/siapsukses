@@ -31,6 +31,16 @@ h4, .h4 {
   font-size: clamp(18px, 1.2vw, 22px) !important;
 }
 
+@media (min-width:1025px) {
+  .hero_cta {
+  background-image: url("../images/hero_bg.png"); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: calc(100svh - 90px);
+}
+}
+
 .tokutei_ginou {
   background-image: url("../images/tokutei_ginou.png");
   background-repeat: no-repeat;
