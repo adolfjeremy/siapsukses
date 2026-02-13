@@ -1,0 +1,20 @@
+---
+import alurImage from "../../images/alur_image.png";
+import Chip from "../../components/Chip.astro";
+---
+
+<section
+  class="flex flex-col items-center justify-center px-[16px] md:px-[48px] lg:px-[80px] gap-6 py-6"
+>
+  <Chip>Alur Program</Chip>
+  <h2>
+    Tahapan Kerja melalui <span class="text-[#146397]">Tokutei Ginou</span> Jepang
+  </h2>
+  <div class="md:p-4 lg:p-6 flex items-center justify-center">
+    <img
+      src={alurImage.src}
+      alt="alur kerja tokutei ginou dalam chart"
+      class="max-w-[60%]"
+    />
+  </div>
+</section>
