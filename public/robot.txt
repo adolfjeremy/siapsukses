@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://siapsukses.com/sitemap-index.xml
+Sitemap: siapsukses.com/sitemap-index.xml
