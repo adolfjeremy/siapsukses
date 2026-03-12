@@ -13,7 +13,7 @@ const navItems = [
   { label: "Hubungi Kami", href: "/hubungi-kami" },
 ];
 
-const isActive = (href) =>
+const isActive = (href: string) =>
   href === "/" ? pathname === "/" : pathname.startsWith(href);
 ---
 
@@ -139,28 +139,32 @@ const isActive = (href) =>
   const drawerPanel = document.getElementById("drawerPanel");
   const backdrop = document.getElementById("backdrop");
 
+  if (!menuBtn || !drawer || !drawerPanel || !backdrop) {
+    throw new Error("Required DOM elements not found");
+  }
+
   function openDrawer() {
-    drawer.classList.remove("hidden");
+    drawer!.classList.remove("hidden");
 
     requestAnimationFrame(() => {
-      drawerPanel.classList.remove("-translate-x-full");
-      drawerPanel.classList.remove("opacity-0");
-      menuBtn.classList.add("is-open");
+      drawerPanel!.classList.remove("-translate-x-full");
+      drawerPanel!.classList.remove("opacity-0");
+      menuBtn!.classList.add("is-open");
     });
   }
 
   function closeDrawer() {
-    drawerPanel.classList.add("-translate-x-full");
-    drawerPanel.classList.add("opacity-0");
-    menuBtn.classList.remove("is-open");
+    drawerPanel!.classList.add("-translate-x-full");
+    drawerPanel!.classList.add("opacity-0");
+    menuBtn!.classList.remove("is-open");
 
     setTimeout(() => {
-      drawer.classList.add("hidden");
+      drawer!.classList.add("hidden");
     }, 300);
   }
 
-  menuBtn.addEventListener("click", () => {
-    if (drawer.classList.contains("hidden")) {
+  menuBtn!.addEventListener("click", () => {
+    if (drawer!.classList.contains("hidden")) {
       openDrawer();
     } else {
       closeDrawer();

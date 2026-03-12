@@ -8,9 +8,6 @@ export default defineConfig({
   site: "https://siapsukses.com", // WAJIB isi domain production
   integrations: [sitemap()],
   output: "static",
-  build: {
-    format: "file",
-  },
   vite: {
     plugins: [tailwindcss()],
   },
